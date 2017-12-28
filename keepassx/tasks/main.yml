@@ -1,0 +1,4 @@
+---
+# this playbook includes keepassx installer and configurator
+- include: keepassx_installer.yml
+  tags: keepassx

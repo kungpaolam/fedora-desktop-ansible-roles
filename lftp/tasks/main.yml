@@ -1,0 +1,4 @@
+---
+# this playbook includes lftp installer and configurator
+- include: lftp_installer.yml
+  tags: lftp

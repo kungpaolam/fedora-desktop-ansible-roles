@@ -1,0 +1,5 @@
+---
+# This playbook installs audacious
+
+- name: Install prerequisites
+  dnf: name=audacious state=latest

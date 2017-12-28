@@ -1,0 +1,4 @@
+---
+# this playbook includes p7zip installer and configurator
+- include: p7zip_installer.yml
+  tags: p7zip

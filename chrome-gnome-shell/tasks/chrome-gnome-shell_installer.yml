@@ -1,0 +1,5 @@
+---
+# This playbook installs chrome-gnome-shell
+
+- name: Install prerequisites
+  dnf: name=chrome-gnome-shell state=latest

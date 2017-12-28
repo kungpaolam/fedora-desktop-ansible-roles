@@ -1,0 +1,5 @@
+---
+# This playbook installs gnome-tweak-tool
+
+- name: Install prerequisites
+  dnf: name=gnome-tweak-tool state=latest

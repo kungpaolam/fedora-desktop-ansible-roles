@@ -1,0 +1,4 @@
+---
+# this playbook includes pavucontrol installer and configurator
+- include: pavucontrol_installer.yml
+  tags: pavucontrol

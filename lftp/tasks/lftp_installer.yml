@@ -1,0 +1,5 @@
+---
+# This playbook installs lftp
+
+- name: Install prerequisites
+  dnf: name=lftp state=latest

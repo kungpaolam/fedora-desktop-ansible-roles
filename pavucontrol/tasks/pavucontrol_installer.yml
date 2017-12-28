@@ -1,0 +1,5 @@
+---
+# This playbook installs pavucontrol
+
+- name: Install prerequisites
+  dnf: name=pavucontrol state=latest

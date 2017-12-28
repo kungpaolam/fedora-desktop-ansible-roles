@@ -1,0 +1,5 @@
+---
+# This playbook installs keepassx
+
+- name: Install prerequisites
+  dnf: name=keepassx state=latest

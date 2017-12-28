@@ -1,0 +1,5 @@
+---
+# This playbook installs xfreerdp
+
+- name: Install prerequisites
+  dnf: name=xfreerdp state=latest

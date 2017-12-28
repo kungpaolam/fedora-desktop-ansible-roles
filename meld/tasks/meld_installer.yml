@@ -1,0 +1,5 @@
+---
+# This playbook installs meld
+
+- name: Install prerequisites
+  dnf: name=meld state=latest

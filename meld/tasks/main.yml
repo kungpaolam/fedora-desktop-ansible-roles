@@ -1,0 +1,4 @@
+---
+# this playbook includes meld installer and configurator
+- include: meld_installer.yml
+  tags: meld

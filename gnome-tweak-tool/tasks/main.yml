@@ -1,0 +1,4 @@
+---
+# this playbook includes gnome-tweak-tool installer and configurator
+- include: gnome-tweak-tool_installer.yml
+  tags: gnome-tweak-tool

@@ -1,0 +1,4 @@
+---
+# this playbook includes chrome-gnome-shell installer and configurator
+- include: chrome-gnome-shell_installer.yml
+  tags: chrome-gnome-shell

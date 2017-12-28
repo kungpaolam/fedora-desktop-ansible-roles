@@ -1,0 +1,5 @@
+---
+# This playbook installs xed
+
+- name: Install prerequisites
+  dnf: name=xed state=latest

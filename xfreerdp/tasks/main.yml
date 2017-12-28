@@ -1,0 +1,4 @@
+---
+# this playbook includes xfreerdp installer and configurator
+- include: xfreerdp_installer.yml
+  tags: xfreerdp

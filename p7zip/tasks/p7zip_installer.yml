@@ -1,0 +1,5 @@
+---
+# This playbook installs p7zip
+
+- name: Install prerequisites
+  dnf: name=p7zip state=latest
