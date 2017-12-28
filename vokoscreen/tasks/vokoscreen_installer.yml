@@ -1,5 +1,5 @@
 ---
-# This playbook installs Tmuxinator
+# This playbook installs vokoscreen
 
 - name: Install prerequisites
-  dnf: name=tmuxinator state=latest
+  dnf: name=vokoscreen state=latest

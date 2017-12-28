@@ -1,4 +1,4 @@
 ---
-# this playbook includes Tmuxinator installer and configurator
-- include: tmuxinator_installer.yml
-  tags: tmuxinator
+# this playbook includes vokoscreen installer and configurator
+- include: vokoscreen_installer.yml
+  tags: vokoscreen
