@@ -1,4 +1,4 @@
 ---
 # this playbook includes xed installer and configurator
-- include: xed.yml
+- include: xed_installer.yml
   tags: xed
