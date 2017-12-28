@@ -1,8 +1,4 @@
 ---
 # This playbook installs libs required for working w/AWS
-- name: Install pip libs
-  pip: >
-    name="{{ item }}"
-    state=present
-  with_items:
-    - awscli
+- name: Install prerequisites
+  dnf: name=awscli state=latest
