@@ -1,0 +1,5 @@
+---
+# This playbook installs jq
+
+- name: Install prerequisites
+  dnf: name=jq state=latest

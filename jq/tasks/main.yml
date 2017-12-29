@@ -1,0 +1,4 @@
+---
+# this playbook includes jq installer and configurator
+- include: jq_installer.yml
+  tags: jq
