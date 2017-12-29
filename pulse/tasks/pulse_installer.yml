@@ -22,9 +22,8 @@
 
       cd {{ temp_dir }}/gnucash
       rpm2cpio {{ temp_dir }}/gnucash.rpm | cpio -idmv
-
       cp usr/lib64/gnucash/libjavascriptcoregtk-1.0.so.0.16.19 /usr/local/pulse
-      cp {{ temp_dir }}/usr/lib64/gnucash/libwebkitgtk-1.0.so.0.22.17 /usr/local/pulse
+      cp usr/lib64/gnucash/libwebkitgtk-1.0.so.0.22.17 /usr/local/pulse
 
       cd /usr/local/pulse 
       ln -s libjavascriptcoregtk-1.0.so.0.16.19 libjavascriptcoregtk-1.0.so
