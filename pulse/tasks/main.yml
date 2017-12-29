@@ -1,0 +1,4 @@
+---
+# this playbook includes PulseSecure installer and configurator
+- include: pulse_installer.yml
+  tags: pulse

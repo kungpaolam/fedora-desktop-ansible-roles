@@ -1,0 +1,19 @@
+---
+# This playbook installs pulsesecure
+# unfortunately there's a problem with it so we have to download the RPM, then 
+# extract some libraries from another package.
+#
+- name: Check if there is any old installation
+  stat: path="/usr/local/pulse"
+  register: pulse_state
+
+- block:
+  - name: Download pulse package
+    dnf:
+      name: http://trial.pulsesecure.net/clients/ps-pulse-linux-5.3r3.0-b1021-centos-rhel-64-bit-installer.rpm
+      state: present
+
+  - name: Download gnucash package
+    get_url: >
+      dest={{ temp_dir }}/gnucash.rpm
+      url="http://rpmfind.net/linux/fedora/linux/releases/27/Everything/x86_64/os/Packages/g/gnucash-2.6.18-1.fc27.x86_64.rpm"
