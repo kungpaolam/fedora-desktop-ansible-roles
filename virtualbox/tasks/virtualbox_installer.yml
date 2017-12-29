@@ -32,7 +32,10 @@
     - dkms
 
 - name: Install Virtualbox package
-  dnf: name=VirtualBox-5.0 state=latest
+  dnf: name=VirtualBox-5.2 state=latest
+
+- name: Add system user to vbox group (this is needed e.g. for sharing USB devices)
+  command: usermod -a -G vboxusers {{ user }}
 
 - name: Update Virtualbox driver
   shell: /usr/sbin/rcvboxdrv setup
@@ -46,8 +49,5 @@
     url=http://download.virtualbox.org/virtualbox/{{ vbox_version.stdout }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack
     dest={{ temp_dir }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack
 
-- name: Install Extension Pack
-  shell: vboxmanage extpack install {{ temp_dir }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack
-
-- name: Add system user to vbox group (this is needed e.g. for sharing USB devices)
-  command: usermod -a -G vboxusers {{ user }}
+#- name: Install Extension Pack
+#  shell: vboxmanage extpack install {{ temp_dir }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_version.stdout }}.vbox-extpack
