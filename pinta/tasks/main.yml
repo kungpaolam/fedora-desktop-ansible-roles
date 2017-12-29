@@ -1,0 +1,4 @@
+---
+# this playbook includes pinta installer and configurator
+- include: pinta_installer.yml
+  tags: pinta

@@ -1,0 +1,5 @@
+---
+# This playbook installs pinta
+
+- name: Install prerequisites
+  dnf: name=pinta state=latest
