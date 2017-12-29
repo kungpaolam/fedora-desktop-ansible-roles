@@ -1,8 +1,7 @@
 ---
 # This playbook installs pulsesecure
-# unfortunately there's a problem with it so we have to download the RPM, then 
-# extract some libraries from another package.
-#
+# Note: in Fedora 27 and beyond, fedora doesn't have some libraries that pulsesecure needs so we
+# are extracting them from gnucash and copying them to the pulsesecure application directory
 - name: Check if there is any old installation
   stat: path="/usr/local/pulse"
   register: pulse_state
@@ -17,3 +16,20 @@
     get_url: >
       dest={{ temp_dir }}/gnucash.rpm
       url="http://rpmfind.net/linux/fedora/linux/releases/27/Everything/x86_64/os/Packages/g/gnucash-2.6.18-1.fc27.x86_64.rpm"
+  - name: Extract files from gnucash package and move to pulse application directory
+    shell: |
+      mkdir {{ temp_dir }}/gnucash
+
+      cd {{ temp_dir }}/gnucash
+      rpm2cpio {{ temp_dir }}/gnucash.rpm | cpio -idmv
+
+      cp usr/lib64/gnucash/libjavascriptcoregtk-1.0.so.0.16.19 /usr/local/pulse
+      cp {{ temp_dir }}/usr/lib64/gnucash/libwebkitgtk-1.0.so.0.22.17 /usr/local/pulse
+
+      cd /usr/local/pulse 
+      ln -s libjavascriptcoregtk-1.0.so.0.16.19 libjavascriptcoregtk-1.0.so
+      ln -s libjavascriptcoregtk-1.0.so.0.16.19 libjavascriptcoregtk-1.0.so.0
+      ln -s libwebkitgtk-1.0.so.0.22.17 libwebkitgtk-1.0.so
+      ln -s libwebkitgtk-1.0.so.0.22.17 libwebkitgtk-1.0.so.0
+
+      rm -rf {{ temp_dir }}/gnucash
