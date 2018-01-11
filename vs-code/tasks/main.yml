@@ -1,0 +1,4 @@
+---
+# this playbook includes code installer
+- include: vs-code_installer.yml
+  tags: vs-code
